@@ -1,0 +1,24 @@
+
+#!/usr/bin/env python3
+import npyscreen
+
+class MagikImage(npyscreen.NPSAppManaged):
+    def onStart(self):
+        self.addForm("MAIN", MainForm, name="Magik Image")
+
+class MainForm(npyscreen.ActionForm):
+    # Constructor
+    def create(self):
+        # Add the TitleText widget to the form
+        self.title = self.add(npyscreen.TitleText, name="TitleText", value="Hello World!")
+    # Override method that triggers when you click the "ok"
+    def on_ok(self):
+        self.parentApp.setNextForm(None)
+    # Override method that triggers when you click the "cancel"
+    def on_cancel(self):
+        self.title.value = "Hello World!"
+
+
+if __name__ == '__main__':
+  magikimage = MagikImage()
+  magikimage.run()
