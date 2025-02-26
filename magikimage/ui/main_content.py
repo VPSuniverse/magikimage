@@ -28,7 +28,7 @@ class MainContent(VerticalGroup):
     def compose(self):
         match self.content:
             case "INFO":
-                yield Static("Información del sistema")
+                yield SystemInfoTable()
             case "INSTALL":
                 yield Static("Instalar aplicaciones")
             case "UPDATE":

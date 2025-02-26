@@ -9,8 +9,8 @@ class Sidebar(VerticalGroup):
         self.buttons = [
             Button("Información", id="info_button"),
             Button("Instalar Aplicaciones", id="install_button"),
-            Button("Actualizar Sistema", id="update_button"),
-            Button("Chequeos de Seguridad", id="security_button"),
+            Button("Actualizar Sistema", id="update_button", disabled=True),
+            Button("Chequeos de Seguridad", id="security_button", disabled=True),
             Button("Salir", id="exit_button", variant="error"),
         ]
         
