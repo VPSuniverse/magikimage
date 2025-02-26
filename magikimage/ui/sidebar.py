@@ -1,6 +1,8 @@
-from textual.widgets import Button, Static
+from textual import on
+from textual.widgets import Button
 from textual.containers import VerticalScroll, VerticalGroup
 from textual.app import ComposeResult
+from ui.main_content import MainContent
 
 class Sidebar(VerticalGroup):
     def compose(self) -> ComposeResult:
@@ -9,7 +11,7 @@ class Sidebar(VerticalGroup):
             Button("Instalar Aplicaciones", id="install_button"),
             Button("Actualizar Sistema", id="update_button"),
             Button("Chequeos de Seguridad", id="security_button"),
-            Button("Salir", id="exit_button"),
+            Button("Salir", id="exit_button", variant="error"),
         ]
         
         yield VerticalScroll(
@@ -28,21 +30,27 @@ class Sidebar(VerticalGroup):
             button.styles.margin = 1
             button.styles.text_align = "center"
             button.styles.text_style = "bold"
-
-
-    def on_button_pressed(self, button: Button) -> None:
-        output = self.query_one("#output", Static)
-        footer = self.query_one(".footer", Static)
-
-        if button.id == "info_button":
-            output.update("Información del sistema operativo...")
-            footer.update("Detalles sobre el sistema operativo.")
-        elif button.id == "install_button":
-            output.update("Aplicaciones disponibles para instalar...")
-            footer.update("Detalles sobre las aplicaciones disponibles.")
-        elif button.id == "update_button":
-            output.update("Actualizando el sistema...")
-            footer.update("Detalles sobre el proceso de actualización.")
-        elif button.id == "security_button":
-            output.update("Realizando chequeos de seguridad...")
-            footer.update("Detalles sobre los chequeos de seguridad.") 
+            
+    @on(Button.Pressed, "#info_button")
+    def show_system_info(self) -> None:
+        main_content = self.app.query_one("MainContent")
+        main_content.show_system_info()
+    
+    @on(Button.Pressed, "#install_button")
+    def show_install_applications(self) -> None:
+        main_content = self.app.query_one("MainContent")
+        main_content.show_install_applications()
+    
+    @on(Button.Pressed, "#update_button")
+    def show_update_system(self) -> None:
+        main_content = self.app.query_one("MainContent")
+        main_content.show_update_system()
+    
+    @on(Button.Pressed, "#security_button")
+    def show_security_checks(self) -> None:
+        main_content = self.app.query_one("MainContent")
+        main_content.show_security_checks()
+    
+    @on(Button.Pressed, "#exit_button")
+    def exit_app(self) -> None:
+        self.app.exit()

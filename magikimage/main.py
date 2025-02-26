@@ -1,6 +1,6 @@
 from textual.app import App, ComposeResult
 from textual.widgets import Header, Footer
-from ui.principal_layout import PrincipalLayout
+from ui.layout.principal_layout import PrincipalLayout
 from textual.containers import Container
 
 class MainApp(App):
@@ -25,4 +25,4 @@ class MainApp(App):
 
 if __name__ == "__main__":
     app = MainApp()
-    app.run()  # Eliminar el argumento css
+    app.run()
