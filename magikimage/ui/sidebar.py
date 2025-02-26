@@ -5,6 +5,10 @@ from textual.app import ComposeResult
 from ui.main_content import MainContent
 
 class Sidebar(VerticalGroup):
+    def __init__(self, main_content: MainContent):
+        self.main_content = main_content
+        super().__init__()
+
     def compose(self) -> ComposeResult:
         self.buttons = [
             Button("Información", id="info_button"),
@@ -33,23 +37,19 @@ class Sidebar(VerticalGroup):
             
     @on(Button.Pressed, "#info_button")
     def show_system_info(self) -> None:
-        main_content = self.app.query_one("MainContent")
-        main_content.show_system_info()
+        self.main_content.show_system_info()
     
     @on(Button.Pressed, "#install_button")
     def show_install_applications(self) -> None:
-        main_content = self.app.query_one("MainContent")
-        main_content.show_install_applications()
+        self.main_content.show_install_applications()
     
     @on(Button.Pressed, "#update_button")
     def show_update_system(self) -> None:
-        main_content = self.app.query_one("MainContent")
-        main_content.show_update_system()
+        self.main_content.show_update_system()
     
     @on(Button.Pressed, "#security_button")
     def show_security_checks(self) -> None:
-        main_content = self.app.query_one("MainContent")
-        main_content.show_security_checks()
+        self.main_content.show_security_checks()
     
     @on(Button.Pressed, "#exit_button")
     def exit_app(self) -> None:
