@@ -7,7 +7,6 @@ from ui.footer import FooterContent
 class PrincipalLayout(HorizontalGroup):
   
   def compose(self) -> ComposeResult:
-    main_content = MainContent()
-    yield Sidebar(main_content)
-    yield main_content
+    yield Sidebar()
+    yield MainContent()
     yield FooterContent()

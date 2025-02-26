@@ -11,19 +11,19 @@ class MainContent(VerticalGroup):
 
     def show_system_info(self):
         self.content = "INFO"
-        self.refresh()
+        self.refresh(recompose=True)
         
     def show_install_applications(self):
         self.content = "INSTALL"
-        self.refresh()
+        self.refresh(recompose=True)
         
     def show_update_system(self):
         self.content = "UPDATE"
-        self.refresh()
+        self.refresh(recompose=True)
         
     def show_security_checks(self):
         self.content = "SECURITY"
-        self.refresh()
+        self.refresh(recompose=True)
 
     def compose(self):
         match self.content:

@@ -9,8 +9,7 @@ class SystemInfoTable(DataTable):
         self.focus()
         self.add_columns("Propiedad", "Valor")
         
-        # Aquí puedes agregar la información del sistema operativo
-        self.add_row("Sistema Operativo", "Linux")  # Cambia esto por la información real
-        self.add_row("Versión", "5.4.0-42-generic")  # Cambia esto por la información real
-        self.add_row("Arquitectura", "x86_64")  # Cambia esto por la información real
-        self.add_row("Hostname", "mi-computadora")  # Cambia esto por la información real
+        self.add_row("Sistema Operativo", "Linux")
+        self.add_row("Versión", "5.4.0-42-generic")
+        self.add_row("Arquitectura", "x86_64")
+        self.add_row("Hostname", "mi-computadora")
