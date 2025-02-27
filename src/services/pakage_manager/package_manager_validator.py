@@ -1,6 +1,6 @@
 import subprocess
 
-class PackageManager:
+class PackageManagerValidator:
     def detect_package_manager(self):
         """Detecta el gestor de paquetes del sistema operativo."""
         # Comprobar si apt está disponible
