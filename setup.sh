@@ -10,4 +10,4 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Ejecutar la aplicación
-python3 magikimage/main.py
+python3 src/main.py
