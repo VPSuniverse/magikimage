@@ -3,15 +3,16 @@ from textual.widgets import Button
 from textual.containers import VerticalScroll, VerticalGroup
 from textual.app import ComposeResult
 from ui.main_content import MainContent
+from services.i18n import i18n
 
 class Sidebar(VerticalGroup):
-    def compose(self) -> ComposeResult:
+    def compose(self) -> ComposeResult: 
         self.buttons = [
-            Button("Información", id="info_button"),
-            Button("Instalar Aplicaciones", id="install_button"),
-            Button("Actualizar Sistema", id="update_button", disabled=True),
-            Button("Chequeos de Seguridad", id="security_button", disabled=True),
-            Button("Salir", id="exit_button", variant="error"),
+            Button(i18n.gettext("Information"), id="info_button"),
+            Button(i18n.gettext("Install Applications"), id="install_button"),
+            Button(i18n.gettext("Update System"), id="update_button", disabled=True),
+            Button(i18n.gettext("Security Checks"), id="security_button", disabled=True),
+            Button(i18n.gettext("Exit"), id="exit_button", variant="error"),
         ]
         
         yield VerticalScroll(
