@@ -2,6 +2,7 @@ from textual.widgets import Static
 from textual.containers import VerticalGroup
 from textual.reactive import reactive
 from ui.sections.system_info_table import SystemInfoTable
+from ui.sections.system_update import SystemUpdate
 
 class MainContent(VerticalGroup):
     content = reactive("INFO")
@@ -32,6 +33,6 @@ class MainContent(VerticalGroup):
             case "INSTALL":
                 yield Static("Instalar aplicaciones")
             case "UPDATE":
-                yield Static("Actualizar sistema")
+                yield SystemUpdate()
             case "SECURITY":
                 yield Static("Chequeos de seguridad")
