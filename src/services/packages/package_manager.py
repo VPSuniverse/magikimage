@@ -23,8 +23,9 @@ class PackageManager:
         else:
             raise Exception("Gestor de paquetes no soportado.")
 
-    def list_upgradable_packages(self):
-        return self.strategy.list_upgradable_packages()
+    async def list_upgradable_packages(self) -> list:
+        package_list = self.strategy.list_upgradable_packages()
+        return package_list
 
-    def update_all_packages(self):
-        self.strategy.update_all_packages() 
+    async def update_all_packages(self):
+        self.strategy.update_all_packages()
