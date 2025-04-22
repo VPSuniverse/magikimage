@@ -1,3 +1,5 @@
+import asyncio
+
 from textual.widgets import Static
 from textual.containers import VerticalGroup
 from textual.reactive import reactive
@@ -5,34 +7,28 @@ from ui.sections.system_info_table import SystemInfoTable
 from ui.sections.system_update import SystemUpdate
 
 class MainContent(VerticalGroup):
-    content = reactive("INFO")
+    content = reactive(SystemInfoTable())
     
     def __init__(self):
         super().__init__()
-
+        
     def show_system_info(self):
-        self.content = "INFO"
+        self.content = SystemInfoTable()
         self.refresh(recompose=True)
         
     def show_install_applications(self):
-        self.content = "INSTALL"
+        self.content = Static("Instalar aplicaciones")
         self.refresh(recompose=True)
         
     def show_update_system(self):
-        self.content = "UPDATE"
+        self.content = SystemUpdate()
         self.refresh(recompose=True)
         
     def show_security_checks(self):
-        self.content = "SECURITY"
+        self.content = Static("Chequeos de seguridad")
         self.refresh(recompose=True)
 
+
     def compose(self):
-        match self.content:
-            case "INFO":
-                yield SystemInfoTable()
-            case "INSTALL":
-                yield Static("Instalar aplicaciones")
-            case "UPDATE":
-                yield SystemUpdate()
-            case "SECURITY":
-                yield Static("Chequeos de seguridad")
+        yield self.content
+        
