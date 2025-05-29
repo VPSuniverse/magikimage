@@ -34,10 +34,10 @@ class SystemUpdate(Static):
   @work
   async def load_data(self, data_table: DataTable) -> None:
     update_button = self.query_one("#update_button")
-    data_table.add_columns("Upgradable packages")
+    data_table.add_columns(i18n.gettext("Upgradable packages"))
     list_upgradable = await self.package_manager.list_upgradable_packages()
     if not list_upgradable:
-      data_table.add_row("No hay actualizaciones disponibles.")
+      data_table.add_row(i18n.gettext("No hay actualizaciones disponibles."))
       update_button.disabled = True
       return
     else:

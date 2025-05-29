@@ -1,5 +1,8 @@
 #!/bin/bash
 
+msgfmt src/locales/en.po -o src/locales/en.mo
+msgfmt src/locales/es.po -o src/locales/es.mo
+
 # Crear un entorno virtual
 python3 -m venv venv
 
