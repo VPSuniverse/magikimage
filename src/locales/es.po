@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MagikImage 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-29 10:00+0000\n"
+"PO-Revision-Date: 2025-05-29 10:00+0000\n"
+"Last-Translator: Your Name <you@example.com>\n"
+"Language: es\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Information"
+msgstr "Información"
+
+msgid "Install Applications"
+msgstr "Instalar Aplicaciones"
+
+msgid "Update System"
+msgstr "Actualizar Sistema"
+
+msgid "Security Checks"
+msgstr "Chequeos de Seguridad"
+
+msgid "Exit"
+msgstr "Salir"
+
+msgid "Magik Image"
+msgstr "Magik Image"
+
+msgid "Descripcion de la aplicacion seleccionada."
+msgstr "Descripción de la aplicación seleccionada."
+
+msgid "Propiedad"
+msgstr "Propiedad"
+
+msgid "Valor"
+msgstr "Valor"
+
+msgid "Sistema Operativo"
+msgstr "Sistema Operativo"
+
+msgid "Versión"
+msgstr "Versión"
+
+msgid "Arquitectura"
+msgstr "Arquitectura"
+
+msgid "Hostname"
+msgstr "Nombre de host"
+
+msgid "Kernel"
+msgstr "Kernel"
+
+msgid "Home"
+msgstr "Directorio personal"
+
+msgid "Usuario"
+msgstr "Usuario"
+
+msgid "Shell"
+msgstr "Shell"
+
+msgid "Upgrade all packages"
+msgstr "Actualizar todos los paquetes"
+
+msgid "Upgradable packages"
+msgstr "Paquetes actualizables"
+
+msgid "No hay actualizaciones disponibles."
+msgstr "No hay actualizaciones disponibles."
+
+msgid "Gestor de paquetes no soportado."
+msgstr "Gestor de paquetes no soportado."
