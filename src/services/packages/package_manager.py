@@ -4,6 +4,7 @@ from .impl.apt_strategy import AptStrategy
 from .impl.yum_strategy import YumStrategy
 from .impl.dnf_strategy import DnfStrategy
 from .impl.pacman_strategy import PacmanStrategy
+from .impl.unsupported_strategy import UnsupportedStrategy
 
 class PackageManager:
     def __init__(self):
@@ -21,7 +22,7 @@ class PackageManager:
         elif manager == "pacman":
             return PacmanStrategy()
         else:
-            raise Exception("Gestor de paquetes no soportado.")
+            return UnsupportedStrategy()
 
     async def list_upgradable_packages(self) -> list:
         package_list = self.strategy.list_upgradable_packages()
