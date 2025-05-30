@@ -9,7 +9,7 @@ class Sidebar(VerticalGroup):
     def compose(self) -> ComposeResult: 
         self.buttons = [
             Button(i18n.gettext("Information"), id="info_button"),
-            Button(i18n.gettext("Install Applications"), id="install_button", disabled=True),
+            Button(i18n.gettext("Install Applications"), id="install_button"),
             Button(i18n.gettext("Update System"), id="update_button", disabled=False),
             Button(i18n.gettext("Security Checks"), id="security_button", disabled=True),
             Button(i18n.gettext("Exit"), id="exit_button", variant="error"),
