@@ -1,0 +1,57 @@
+[
+  {
+    "id": "apache",
+    "name": "Apache Web Server",
+    "description": "A widely used open-source web server software.",
+    "packages": {
+      "apt": "apache2",
+      "yum": "httpd",
+      "dnf": "httpd",
+      "pacman": "apache"
+    }
+  },
+  {
+    "id": "nginx",
+    "name": "Nginx Web Server",
+    "description": "A high-performance web server, reverse proxy, and load balancer.",
+    "packages": {
+      "apt": "nginx",
+      "yum": "nginx",
+      "dnf": "nginx",
+      "pacman": "nginx"
+    }
+  },
+  {
+    "id": "mongodb",
+    "name": "MongoDB Community Server",
+    "description": "A NoSQL document-oriented database. May require manual repository setup first on some systems.",
+    "packages": {
+      "apt": "mongodb-org",
+      "yum": "mongodb-org",
+      "dnf": "mongodb-org",
+      "pacman": "mongodb"
+    }
+  },
+  {
+    "id": "mysql",
+    "name": "MySQL Server",
+    "description": "A popular open-source relational database management system.",
+    "packages": {
+      "apt": "mysql-server",
+      "yum": "mysql-community-server",
+      "dnf": "mysql-community-server",
+      "pacman": "mariadb"
+    }
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL Server",
+    "description": "A powerful, open-source object-relational database system.",
+    "packages": {
+      "apt": "postgresql postgresql-contrib",
+      "yum": "postgresql-server",
+      "dnf": "postgresql-server",
+      "pacman": "postgresql"
+    }
+  }
+]
