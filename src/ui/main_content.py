@@ -5,6 +5,7 @@ from textual.containers import VerticalGroup
 from textual.reactive import reactive
 from ui.sections.system_info_table import SystemInfoTable
 from ui.sections.system_update import SystemUpdate
+from ui.sections.install_apps_section import InstallAppsSection
 
 class MainContent(VerticalGroup):
     content = reactive(SystemInfoTable())
@@ -17,7 +18,7 @@ class MainContent(VerticalGroup):
         self.refresh(recompose=True)
         
     def show_install_applications(self):
-        self.content = Static("Instalar aplicaciones")
+        self.content = InstallAppsSection()
         self.refresh(recompose=True)
         
     def show_update_system(self):
